@@ -8,7 +8,7 @@ library(lubridate)
 library(shinyFeedback)
 library(dplyr)
 library(dbplyr)
-library(RMySQL)
+#library(RMySQL)
 
 db_config <- config::get()$db
 

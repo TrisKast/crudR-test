@@ -6,7 +6,7 @@ Note that this example will only work with a specially tailored mtcars dataset, 
 #### Current State 
 Currently the Shiny app is using SQLite which is run by itself. The MySQL database container ist set up, yet not connected. To run the current Shiny container use:
 ```
-docker run -d -v /path/to/mtcars.sqlite3:/srv/shiny-server/data -p 3838:3838 tristankast/crud-example::latest
+docker run -d -v /path/to/mtcars.sqlite3:/srv/shiny-server/data -p 3838:3838 tristankast/crud-example:latest
 ```
 
 - `-d`: Run the container in detached mode
