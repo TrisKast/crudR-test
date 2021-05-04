@@ -1,5 +1,6 @@
 # get shiny serves plus tidyverse packages image as base
 FROM rocker/shiny-verse:latest
+
 # system libraries of general use
 RUN apt-get update && apt-get install -y \
     sudo \
@@ -24,14 +25,19 @@ RUN R -e "install.packages('dplyr')"
 RUN R -e "install.packages('dblyr')"
 RUN R -e "install.packages('config')"
 RUN R -e "install.packages('uuid')"
-RUN R -e "install.packages('RMySQL')"
+#RUN R -e "install.packages('RMySQL')"
 
-
+# Copy actual shiny app over into container
 COPY . /srv/shiny-server/
+
+# Default for database technology, can be changed to mysql
+#ENV DB_TECH sqlite
 
 # select port
 EXPOSE 3838
+
 # allow permission
 RUN sudo chown -R shiny:shiny /srv/shiny-server
+
 # run app
 CMD ["/usr/bin/shiny-server"]
