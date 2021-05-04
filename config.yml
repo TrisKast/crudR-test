@@ -1,9 +1,9 @@
 default:
   app_name: "crud_traditional"
   db:
-  # dbname: 'data/mtcars.sqlite3'
-    databaseName: 'todos'
-    host: 'mysql'
-    port: 3306
-    user: 'root'
-    password: 'password'
+    dbname: 'data/mtcars.sqlite3'
+    #databaseName: 'todos'
+    #host: 'mysql'
+    #port: 3306
+    #user: 'root'
+    #password: 'password'
